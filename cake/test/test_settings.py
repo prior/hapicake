@@ -1,11 +1,10 @@
 import unittest
-from ..hub import Hub
-from utils.list import sort
 from uuid import uuid4
+from .hub_jukebox import hub_jukebox
 
-class AuthTest(unittest.TestCase):
+class SettingsTest(unittest.TestCase):
 
-    def setUp(self): self.hub = Hub(oauth_token='demooooo-oooo-oooo-oooo-oooooooooooo')
+    def setUp(self): self.hub = hub_jukebox.default
 
     def tearDown(self): pass
 
