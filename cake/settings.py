@@ -29,7 +29,7 @@ class Settings(object):
     @cached_property
     def _settings_ex(self): return GetSettings(self.hub, self.sm, self.domains, self.all)
 
-    def __getitem__(self, name): return self._settings[name]
+    def __getitem__(self, name): return self._settings.get(name,None)
     def __setitem__(self, name, value): 
         setting = Setting(self, name=name, value=value)
         self.pending_creates[setting.name] = setting
