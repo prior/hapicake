@@ -68,7 +68,7 @@ class Setting(object):
         hub_id = mget(kwargs,'hub_id','portal_id','portalId')
         if hub_id: 
             if not hub.id: hub.id = hub_id
-            elif hub_id!=hub.id: raise Exception('wtf-- that shouldnt have happened')
+            elif hub_id!=hub.id: raise Exception('wtf-- that shouldnt have happened -- hub.id=%s , hub_id=%s' % (hub.id, hub_id))
 
 class SettingsExchange(JsonExchange):
     base_path = 'settings/v1'
@@ -76,6 +76,7 @@ class SettingsExchange(JsonExchange):
 
     
 class GetSettings(SettingsExchange):
+    debug=True
     def __init__(self, auth, sm=False, domains=False, all=False, **kwargs):
         super(GetSettings, self).__init__(auth, **kwargs)
         self.sm = sm
