@@ -1,7 +1,7 @@
 import unittest
 from uuid import uuid4
 from .hub_jukebox import hub_jukebox
-from .. import env
+#from .. import env
 
 class SettingsTest(unittest.TestCase):
 
